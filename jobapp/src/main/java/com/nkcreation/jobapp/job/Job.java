@@ -1,12 +1,23 @@
 package com.nkcreation.jobapp.job;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String jobName;
     private String jobDescription;
     private String maxSalary;
     private String minSalary;
     private String location;
+
+    public Job() {
+    }
 
     public Job(Long id, String jobName, String jobDescription, String maxSalary, String minSalary, String location) {
         this.id = id;
