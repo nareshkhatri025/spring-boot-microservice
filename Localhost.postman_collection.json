@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "635c498d-e11d-4ce0-aeb0-916257500dda",
+		"name": "Localhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25118098",
+		"_collection_link": "https://cloudy-crater-158763.postman.co/workspace/New-Team-Workspace~8174c626-7a90-4474-8e79-b62736125d7b/collection/25118098-635c498d-e11d-4ce0-aeb0-916257500dda?action=share&source=collection_link&creator=25118098"
+	},
+	"item": [
+		{
+			"name": "jobs",
+			"item": [
+				{
+					"name": "getAlljobs",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "createJob",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Software Developer\",\r\n    \"description\":\"A Java developer with 4 years of experience\",\r\n    \"maxSalary\":\"2000000\",\r\n    \"minSalary\":\"150000\",\r\n    \"location\":\"Ujjain\",\r\n    \"company_id\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}jobs",
+							"host": [
+								"{{base}}jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteJob",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateJob",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"jobName\": \"Software Developer\",\r\n        \"jobDescription\": \"A Flutter developer with 3 years of experience\",\r\n        \"maxSalary\": \"2000000\",\r\n        \"minSalary\": \"150000\",\r\n        \"location\": \"Ujjain\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}jobs/2",
+							"host": [
+								"{{base}}jobs"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "getAllCompanies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}companies",
+							"host": [
+								"{{base}}companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCompany",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\":\"Tata Technologies\",\r\n    \"companyDescription\":\"A Software Development company. Group of Tata Companies\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}companies",
+							"host": [
+								"{{base}}companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCompany",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateCompany",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"jobName\": \"Software Developer\",\r\n        \"jobDescription\": \"A Flutter developer with 3 years of experience\",\r\n        \"maxSalary\": \"2000000\",\r\n        \"minSalary\": \"150000\",\r\n        \"location\": \"Ujjain\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}jobs/2",
+							"host": [
+								"{{base}}jobs"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/students/add",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"students",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"naresh\",\r\n\"age\": 25}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base}}students/add",
+					"host": [
+						"{{base}}students"
+					],
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "http://localhost:8080/",
+			"type": "string"
+		}
+	]
+}

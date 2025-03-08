@@ -1,9 +1,14 @@
 package com.nkcreation.jobapp.job;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.nkcreation.jobapp.company.Company;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Job {
@@ -16,11 +21,15 @@ public class Job {
     private String minSalary;
     private String location;
 
+    @ManyToOne
+    @JoinColumn(name = "company_id", nullable = false)  // Foreign key
+    private Company company;
+
     public Job() {
     }
 
-    public Job(Long id, String jobName, String jobDescription, String maxSalary, String minSalary, String location) {
-        this.id = id;
+    public Job( String jobName, String jobDescription, String maxSalary, String minSalary, String location) {
+       
         this.jobName = jobName;
         this.jobDescription = jobDescription;
         this.maxSalary = maxSalary;

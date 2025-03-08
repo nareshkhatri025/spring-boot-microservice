@@ -1,14 +1,17 @@
-package com.nkcreation.companies.impl;
+package com.nkcreation.jobapp.impl;
 
 
-import com.nkcreation.companies.company.Company;
-import com.nkcreation.companies.company.CompanyRepository;
-import com.nkcreation.companies.company.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.nkcreation.jobapp.company.Company;
+import com.nkcreation.jobapp.company.CompanyRepository;
+import com.nkcreation.jobapp.company.CompanyService;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CompanyImpl implements CompanyService {
 
     @Autowired

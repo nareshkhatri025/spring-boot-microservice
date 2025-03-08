@@ -1,4 +1,4 @@
-package com.nkcreation.companies.company;
+package com.nkcreation.jobapp.company;
 
 import com.nkcreation.jobapp.job.Job;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.nkcreation.companies.company;
+package com.nkcreation.jobapp.company;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,26 +11,31 @@ import java.util.List;
 @RequestMapping("/companies")
 public class CompanyController {
 
-    @Autowired
-    CompanyService service;
+   
+    public CompanyController(CompanyService service) {
+		super();
+		this.service = service;
+	}
+
+	CompanyService service;
 
     @GetMapping
     public ResponseEntity<List<Company>> findAllCompanies(){
         return new ResponseEntity<>(service.findAll(),HttpStatus.OK);
     }
-    @PostMapping
+    
+    @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<String> createCompany(@RequestBody Company company){
         service.createCompany(company);
         return new ResponseEntity<>("Company Create Successfully",HttpStatus.OK);
     }
-    @GetMapping("/{Id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Company> getCompanyById(@PathVariable Long id){
           var company=  service.findById(id);
           return new ResponseEntity<>(company,HttpStatus.OK);
     }
-    @DeleteMapping("/{Id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteCompany(@PathVariable Long id){
-
        var isDeleted= service.deleteCompany(id);
        if(isDeleted){
            return new ResponseEntity<>("Deleted Successfylly",HttpStatus.OK);

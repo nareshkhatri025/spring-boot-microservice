@@ -1,4 +1,4 @@
-package com.nkcreation.companies.company;
+package com.nkcreation.jobapp.company;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
